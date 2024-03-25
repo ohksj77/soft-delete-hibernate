@@ -5,7 +5,8 @@ hibernate가 제공하는 @SoftDelete 어노테이션을 알아보자
 
 ![](https://github.com/ohksj77/soft-delete-hibernate/assets/89020004/af3c4eb3-3724-490c-903f-af7db7a1aca0)
 
-- 디폴트로 boolean 타입의 `deleted` 필드가 추가되며, Entity 내부에 자바코드로 동일한 이름의 필드를 사용할 수 없다. (중복 필드 에러 발생)
+- 디폴트로 boolean 타입의 `deleted` 필드가 추가되며, Entity 내부에 자바코드로 동일한 이름의 필드를 사용할 수 없다.
+    - 중복 필드 에러가 발생한다.
     - 즉, 자바 코드로 접근은 불가하다.
 - 필드명은 커스텀하게 설정 가능하며, boolean 타입이 싫은 경우 converter를 사용할 수도 있다.
 
