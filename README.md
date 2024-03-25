@@ -25,6 +25,7 @@ hibernate가 제공하는 @SoftDelete 어노테이션을 알아보자
 
 ## 커스텀한 사용
 ### Converter
+- 디폴트 설정에서 deleted = true 가 삭제됐음을 나타내는 것을 고려해 Boolean을 반환하면 된다.
 ![](https://github.com/ohksj77/soft-delete-hibernate/assets/89020004/3290120d-777d-4afc-a82c-c1199872cb4f)
 
 ### Entity 설정
