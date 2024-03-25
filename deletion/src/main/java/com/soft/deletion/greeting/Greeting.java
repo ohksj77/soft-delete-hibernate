@@ -1,5 +1,6 @@
 package com.soft.deletion.greeting;
 
+import com.soft.deletion.global.DeletedAtConverter;
 import com.soft.deletion.global.audit.AuditListener;
 import com.soft.deletion.global.audit.Auditable;
 import com.soft.deletion.global.audit.BaseTime;
@@ -14,7 +15,9 @@ import lombok.*;
 import org.hibernate.annotations.SoftDelete;
 
 @Entity
-@SoftDelete // hibernate 지원 annotation
+@SoftDelete(
+        columnName = "deleted_at",
+        converter = DeletedAtConverter.class) // hibernate 지원 annotation
 @EntityListeners(AuditListener.class)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Greeting implements Auditable {
