@@ -31,5 +31,5 @@ hibernate가 제공하는 @SoftDelete 어노테이션을 알아보자
 ![](https://github.com/ohksj77/soft-delete-hibernate/assets/89020004/7fddbcc8-fda0-4dff-b6bd-a3a3fcf647f8)
 
 ### datetime 타입의 deleted_at 필드 생성
-- api 호출시에도 정상 작동한다.
+- api 호출시 JpaRepository는 deleted_at이 null인 부분만 조회를 수행함을 확인했다.
 ![](https://github.com/ohksj77/soft-delete-hibernate/assets/89020004/2296993e-b73f-4920-b3c5-7ba57453221a)
