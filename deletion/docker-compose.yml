@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  database:
+    image: mysql
+    platform: linux/amd64
+    container_name: database
+    restart: on-failure
+    ports:
+      - "3306:3306"
+    volumes:
+      - database:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: deletion
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: 1234
+    tty: true
+
+volumes:
+  database: null
