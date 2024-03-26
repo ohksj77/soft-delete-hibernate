@@ -1,12 +1,13 @@
 package com.soft.deletion.global.envelop;
 
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 @Getter
-@AllArgsConstructor
-@RequiredArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 public class ApiResponse<T> {
 
     private final String code;
@@ -15,5 +16,9 @@ public class ApiResponse<T> {
 
     public static <T> ApiResponse<T> of(final T data, final ApiStatus apiStatus) {
         return new ApiResponse<>(apiStatus.getCode(), apiStatus.getMessage(), data);
+    }
+
+    public static ApiResponse<Void> ofError(final ApiStatus apiStatus) {
+        return new ApiResponse<>(apiStatus.getCode(), apiStatus.getMessage());
     }
 }
