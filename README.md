@@ -25,9 +25,12 @@ hibernate가 제공하는 @SoftDelete 어노테이션을 알아보자
   
 ![](https://github.com/ohksj77/soft-delete-hibernate/assets/89020004/6720975f-5fca-47c3-b906-20edc2fbdfc0)
 
+
 ## 커스텀한 사용
 ### Converter
 - 디폴트 설정에서 deleted = true 가 삭제됐음을 나타내는 것을 고려해 Boolean을 반환하면 된다.
+
+
 ![](https://github.com/ohksj77/soft-delete-hibernate/assets/89020004/3290120d-777d-4afc-a82c-c1199872cb4f)
 
 ### Entity 설정
@@ -35,4 +38,25 @@ hibernate가 제공하는 @SoftDelete 어노테이션을 알아보자
 
 ### datetime 타입의 deleted_at 필드 생성
 - api 호출시 JpaRepository는 deleted_at이 null인 부분만 조회를 수행함을 확인했다.
+
+  
 ![](https://github.com/ohksj77/soft-delete-hibernate/assets/89020004/2296993e-b73f-4920-b3c5-7ba57453221a)
+
+## 삭제가 된 부분을 jpa를 통해 조회가 가능할까?
+- 적절히 jpa의 쿼리를 조작하면 가능하다.
+
+- 필드가 명시되어 있지 않기에 jpql으로는 불가하다.
+
+![](https://github.com/ohksj77/soft-delete-hibernate/assets/89020004/8c995c4e-1173-4c06-9f26-c0839e129e26)
+
+- nativeQuery = true 를 통해 쿼리를 작성하면
+
+![](https://github.com/ohksj77/soft-delete-hibernate/assets/89020004/c6dae11f-12a4-4eec-ba52-4382fc3d6ea8)
+
+- 쿼리가 원하는대로 실행되며
+
+![](https://github.com/ohksj77/soft-delete-hibernate/assets/89020004/7e582269-5602-4bb8-a797-38ac80a50fd9)
+
+- deleted_at이 null이 아닌 row에 대한 조회 결과를 얻을 수 있다.
+
+![](https://github.com/ohksj77/soft-delete-hibernate/assets/89020004/ffc0c129-311e-42e2-b929-a8023f2f5fd2)
