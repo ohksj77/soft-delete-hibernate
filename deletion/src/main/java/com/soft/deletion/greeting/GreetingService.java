@@ -35,6 +35,11 @@ public class GreetingService {
         return greetingMapper.toGreetingResponses(greetingRepository.findAll());
     }
 
+    @Transactional(readOnly = true)
+    public List<GreetingResponse> findAllGreetingsDeleted() {
+        return greetingMapper.toGreetingResponses(greetingRepository.findAllByDeletedAtIsNotNull());
+    }
+
     @Transactional
     public void deleteGreeting() {
         greetingRepository.deleteAll();
