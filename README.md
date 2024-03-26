@@ -1,7 +1,7 @@
 # soft-delete-hibernate
 hibernate가 제공하는 @SoftDelete 어노테이션을 알아보자
 
-[hibernate 6.4.4 버전 기준으로 테스트 했으며 6.4 버전부터 도입된 어노테이션이다.]
+[hibernate 6.4.4 버전 기준으로 MySQL과 함께 테스트 했으며 6.4 버전부터 도입된 어노테이션이다.]
 [@SoftDelete JavaDoc](https://docs.jboss.org/hibernate/orm/6.5/javadocs/org/hibernate/annotations/SoftDelete.html)
 
 ## 다음 어노테이션을 테스트
