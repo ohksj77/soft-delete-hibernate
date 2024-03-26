@@ -45,7 +45,7 @@ hibernate가 제공하는 @SoftDelete 어노테이션을 알아보자
 ## 삭제가 된 부분을 jpa를 통해 조회가 가능할까?
 - 적절히 jpa의 쿼리를 조작하면 가능하다.
 
-- 필드가 명시되어 있지 않기에 jpql으로는 불가하다.
+- 필드가 명시되어 있지 않기에 그냥 jpql으로는 불가하다.
 
 ![](https://github.com/ohksj77/soft-delete-hibernate/assets/89020004/8c995c4e-1173-4c06-9f26-c0839e129e26)
 
