@@ -28,7 +28,8 @@ hibernate가 제공하는 @SoftDelete 어노테이션을 알아보자
 
 ## 커스텀한 사용
 ### Converter
-- 디폴트 설정에서 deleted = true 가 삭제됐음을 나타내는 것을 고려해 Boolean을 반환하면 된다.
+- ~디폴트 설정에서 deleted = true 가 삭제됐음을 나타내는 것을 고려해 Boolean을 반환하면 된다.~
+    - 현재 LocalDateTime.now()를 그대로 반환하면 무조건 기본으로 값이 저장됨을 확인했다. 아래 코드대로 하면 원하는대로 동작하지 않는다.
 
 
 ![](https://github.com/ohksj77/soft-delete-hibernate/assets/89020004/3290120d-777d-4afc-a82c-c1199872cb4f)
@@ -37,8 +38,8 @@ hibernate가 제공하는 @SoftDelete 어노테이션을 알아보자
 ![](https://github.com/ohksj77/soft-delete-hibernate/assets/89020004/7fddbcc8-fda0-4dff-b6bd-a3a3fcf647f8)
 
 ### datetime 타입의 deleted_at 필드 생성
-- api 호출시 JpaRepository는 deleted_at이 null인 부분만 조회를 수행함을 확인했다.
-
+- ~api 호출시 JpaRepository는 deleted_at이 null인 부분만 조회를 수행함을 확인했다.~
+    - ~잘못된 테스트였다.~
   
 ![](https://github.com/ohksj77/soft-delete-hibernate/assets/89020004/2296993e-b73f-4920-b3c5-7ba57453221a)
 
