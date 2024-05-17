@@ -21,7 +21,7 @@ hibernate가 제공하는 @SoftDelete 어노테이션을 알아보자
 
 ## JpaRepository.findAll() 로 조회하는 API 호출시
 - `deleted` = true 인 경우 조회되지 않는다.
-- 하단 사진의 `data`가 비어있다. (envelop 패턴의 실제 데이터 부분)
+- 하단 사진의 `data`가 비어있다. (envelope 패턴의 실제 데이터 부분)
   
 ![](https://github.com/ohksj77/soft-delete-hibernate/assets/89020004/6720975f-5fca-47c3-b906-20edc2fbdfc0)
 
